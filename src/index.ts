@@ -1,4 +1,5 @@
 import express from 'express'
+import userRouter from './api/usuarios/usuarios.routes';
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.get('/', (_req,res) => {
     res.send('Hello world!!')
 });
 
+app.use('/api/usuarios', userRouter)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
